@@ -9,7 +9,7 @@
       - curl
       - unzip
       state: latest
-  task:
+  tasks:
   - name: Download aws-cli.zip
     get_url:
       url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
