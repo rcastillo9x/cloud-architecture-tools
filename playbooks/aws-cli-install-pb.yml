@@ -21,6 +21,6 @@
   tasks:
   - name: unzip aws-cli.zip
     unarchive:
-      src: ./awscliv2.zip
-      dest:  .
+      src: awscliv2.zip
+      dest: ./
       
