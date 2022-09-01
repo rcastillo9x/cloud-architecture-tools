@@ -1,14 +1,14 @@
 --- # Install aws cli
+  hosts: localhost
+  connection: local 
+  tasks:
   - name: Install curl
     apt:
       - curl
       - unzip
     state: latest
     cache_valid_time: 3600
-  - name: "Install aws-cli"
-    hosts: localhost
-    connection: local 
-    tasks:
+  tasks:
     - name: "just execute a ls -lrt command"
       shell: "ls -lrt"
       register: "output"
