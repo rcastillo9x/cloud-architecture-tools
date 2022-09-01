@@ -15,12 +15,10 @@
     get_url:
       url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
       dest: ./awscliv2.zip
-      owner: cloud_user
-      group: cloud_user
       mode: "777"
   tasks:
   - name: unzip aws-cli.zip
     unarchive:
       src: awscliv2.zip
-      dest: ./
+
       
