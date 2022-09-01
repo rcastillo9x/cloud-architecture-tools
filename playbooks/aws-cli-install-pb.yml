@@ -1,6 +1,7 @@
 --- # Install aws cli
 - hosts: localhost
   connection: local 
+  become: true
   tasks:
   - name: Install curl
     apt:
@@ -8,4 +9,4 @@
       - curl
       - unzip
       state: latest
-      cache_valid_time: 3600
+
