@@ -17,7 +17,7 @@
       dest: ./awscliv2.zip
       owner: cloud_user
       group: cloud_user
-      mode: 555
+      mode: "777"
     get_url:
       url:  # required. HTTP, HTTPS, or FTP URL in the form (http|https|ftp)://[user[:pass]]@host.domain[:port]/path
       dest:  # required. Absolute path of where to download the file to. If C(dest) is a directory, either the server provided filename or, if none provided, the base name of the URL on the remote server will be used. If a directory, C(force) has no effect. If C(dest) is a directory, the file will always be downloaded (regardless of the C(force) option), but replaced only if the contents changed..
