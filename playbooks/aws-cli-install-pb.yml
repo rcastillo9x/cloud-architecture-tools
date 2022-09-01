@@ -2,6 +2,7 @@
 - hosts: localhost
   connection: local 
   become: true
+ 
   tasks:
   - name: Install curl
     apt:
@@ -9,12 +10,14 @@
       - curl
       - unzip
       state: latest
+ 
   tasks:
   - name: Download aws-cli.zip
     get_url:
       url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
       dest: ./awscliv2.zip
       mode: 0755 
+ 
   tasks:
   - name: unzip aws-cli.zip
     unarchive:
