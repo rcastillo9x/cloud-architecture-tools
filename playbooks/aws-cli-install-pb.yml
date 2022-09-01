@@ -15,4 +15,9 @@
       url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
       dest: ./awscliv2.zip
       mode: '0440'
-
+  tasks:
+  - name: unzip aws-cli.zip
+    unarchive:
+      src: aws-cli.zip
+      dest:  .
+      
