@@ -2,7 +2,6 @@
 - hosts: localhost
   connection: local 
   become: true
-  become_user: cloud_user  #TODO: por variable
   tasks:
   - name: Install curl
     apt:
@@ -21,5 +20,6 @@
     unarchive:
       src: awscliv2.zip
       dest: ./
+  
 
       
