@@ -1,8 +1,10 @@
 --- # Install aws cli
   - name: Install curl
-    ansible.builtin.apt:
-      name: curl
-      state: present
+    apt:
+      - curl
+      - unzip
+      state: latest
+      cache_valid_time: 3600
   - name: "Install aws-cli"
     hosts: localhost
     connection: local 
