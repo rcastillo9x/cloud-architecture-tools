@@ -18,6 +18,6 @@
   tasks:
   - name: unzip aws-cli.zip
     unarchive:
-      src: aws-cli.zip
+      src: ./aws-cli.zip
       dest:  .
       
