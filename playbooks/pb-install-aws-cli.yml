@@ -1,5 +1,9 @@
 --- # Install aws cli
-  - name: "Playing with Ansible and Git"
+  - name: Install curl
+    ansible.builtin.apt:
+      name: curl
+      state: present
+  - name: "Install aws-cli"
     hosts: localhost
     connection: local 
     tasks:
