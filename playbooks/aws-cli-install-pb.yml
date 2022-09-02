@@ -4,6 +4,13 @@
   become: true
  
   tasks:
+  - name: "Update Repository cache"
+    apt:
+      update_cache: true
+      cache_valid_time: 3600
+      force_apt_get: true
+
+  tasks:
   - name: run ansible playbook locally
     debug:
     msg: "Hi This Is DecodingDevOps"
@@ -17,17 +24,11 @@
       state: latest
  
   tasks:
-  - name: Download aws-cli.zip
-    get_url:
-      url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
-      dest: ./awscliv2.zip
-      mode: 0755 
- 
-  tasks:
-  - name: unzip aws-cli.zip
-    unarchive:
-      src: awscliv2.zip
-      dest: ./ 
+  - name: update Repository
+    apt:
+      name: aws-cli
+      state: presentd
+      
   
 
       
