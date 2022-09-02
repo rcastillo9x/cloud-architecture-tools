@@ -1,0 +1,24 @@
+  tasks:
+  - name: Download aws-cli.zip
+    get_url:
+      url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+      dest: ./awscliv2.zip
+      mode: 0755 
+ 
+  tasks:
+  - name: unzip aws-cli.zip
+    unarchive:
+      src: awscliv2.zip
+      dest: ./ 
+
+
+  tasks:
+  - name: update Repository
+    apt:
+      name: aws-cli
+      state: present
+
+  tasks:
+  - name: run ansible playbook locally
+    debug:
+    msg: "Hi This Is DecodingDevOps"

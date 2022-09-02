@@ -11,11 +11,6 @@
       force_apt_get: true
 
   tasks:
-  - name: run ansible playbook locally
-    debug:
-    msg: "Hi This Is DecodingDevOps"
-
-  tasks:
   - name: Install curl
     apt:
       name:
@@ -24,11 +19,21 @@
       state: latest
  
   tasks:
-  - name: update Repository
-    apt:
-      name: aws-cli
-      state: present
+  - name: Download aws-cli.zip
+    get_url:
+      url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+      dest: ./awscliv2.zip
+      mode: 0755 
+ 
+  tasks:
+  - name: unzip aws-cli.zip
+    unarchive:
+      src: awscliv2.zip
+      dest: ./ 
       
+  tasks:
+  - name: Install aws-cli
+    shell: sudo ./aws/install
   
 
       
