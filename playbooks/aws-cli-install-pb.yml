@@ -27,7 +27,7 @@
   - name: update Repository
     apt:
       name: aws-cli
-      state: presentd
+      state: present
       
   
 
