@@ -17,7 +17,13 @@
       - curl
       - unzip
       state: latest
- 
+
+  tasks:
+  - name: "Create dir assets"
+    file:
+      path: ~/assets
+      state: directory
+
   tasks:
   - name: Download aws-cli.zip
     get_url:
