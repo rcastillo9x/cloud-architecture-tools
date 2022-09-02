@@ -23,11 +23,11 @@
       dest: ./awscliv2.zip
       mode: 0755 
  
-#  tasks:
-#  - name: unzip aws-cli.zip
-#    unarchive:
-#      src: awscliv2.zip
-#      dest: ./ 
+  tasks:
+  - name: unzip aws-cli.zip
+    unarchive:
+      src: awscliv2.zip
+      dest: ./ 
   
 
       
