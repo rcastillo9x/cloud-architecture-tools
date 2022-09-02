@@ -4,49 +4,49 @@
   become: true
  
   tasks:
-    - name: Install aws-cli
+  - name: Install aws-cli
 
-      block:
-        - name: Display log 
-          debug:
-            msg: "*** Start install aws-cli ***"
-        
-        - name: "Update Repository cache"
-          apt:
-            update_cache: true
-            cache_valid_time: 3600
-            force_apt_get: true
-
-        - name: Install curl
-          apt:
-            name:
-            - curl
-            - unzip
-            state: latest
-        
-        - name: "Create dir assets"
-          file:
-            path: ~/assets
-            state: directory
-
-        - name: Download aws-cli.zip
-          get_url:
-            url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
-            dest: ./assets/awscliv2.zip
-            mode: 0755 
-  
-        - name: unzip aws-cli.zip
-          unarchive:
-            src: ./assets/awscliv2.zip
-            dest: ./assets/
-
-        - name: Install aws-cli
-          shell: ./assets/aws/install
-      
-      rescue:
-        -name: Display error 
+    block:
+      - name: Display log 
         debug:
-          msg: "Install failed."
+          msg: "*** Start install aws-cli ***"
+      
+      - name: "Update Repository cache"
+        apt:
+          update_cache: true
+          cache_valid_time: 3600
+          force_apt_get: true
+
+      - name: Install curl
+        apt:
+          name:
+          - curl
+          - unzip
+          state: latest
+      
+      - name: "Create dir assets"
+        file:
+          path: ~/assets
+          state: directory
+
+      - name: Download aws-cli.zip
+        get_url:
+          url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+          dest: ./assets/awscliv2.zip
+          mode: 0755 
+
+      - name: unzip aws-cli.zip
+        unarchive:
+          src: ./assets/awscliv2.zip
+          dest: ./assets/
+
+      - name: Install aws-cli
+        shell: ./assets/aws/install
+    
+    rescue:
+      -name: Display error 
+      debug:
+        msg: "Install failed."
 
 
 
