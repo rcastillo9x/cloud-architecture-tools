@@ -22,18 +22,18 @@
   - name: Download aws-cli.zip
     get_url:
       url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
-      dest: ./awscliv2.zip
+      dest: ./assets/awscliv2.zip
       mode: 0755 
  
   tasks:
   - name: unzip aws-cli.zip
     unarchive:
-      src: awscliv2.zip
-      dest: ./ 
+      src: ./assets/awscliv2.zip
+      dest: ./assets/
       
   tasks:
   - name: Install aws-cli
-    shell: sudo ./aws/install
+    shell: ./assets/aws/install
   
 
       
