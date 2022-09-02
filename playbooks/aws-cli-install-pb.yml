@@ -1,8 +1,13 @@
---- # Install aws cli
-- hosts: localhost
-  connection: local 
+--- 
+# Install aws cli
+- hosts: localhost 
   become: true
  
+  tasks:
+  - name: run ansible playbook locally
+    debug:
+    msg: "Hi This Is DecodingDevOps"
+
   tasks:
   - name: Install curl
     apt:
@@ -18,11 +23,11 @@
       dest: ./awscliv2.zip
       mode: 0755 
  
-  tasks:
-  - name: unzip aws-cli.zip
-    unarchive:
-      src: awscliv2.zip
-      dest: ./
+#  tasks:
+#  - name: unzip aws-cli.zip
+#    unarchive:
+#      src: awscliv2.zip
+#      dest: ./
   
 
       
