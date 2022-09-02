@@ -4,42 +4,42 @@
   become: true
  
   tasks:
-  - name: "Update Repository cache"
-    apt:
-      update_cache: true
-      cache_valid_time: 3600
-      force_apt_get: true
+    - name: "Update Repository cache"
+      apt:
+        update_cache: true
+        cache_valid_time: 3600
+        force_apt_get: true
 
   tasks:
-  - name: Install curl
-    apt:
-      name:
-      - curl
-      - unzip
-      state: latest
+    - name: Install curl
+      apt:
+        name:
+        - curl
+        - unzip
+        state: latest
 
   tasks:
-  - name: "Create dir assets"
-    file:
-      path: ~/assets
-      state: directory
+    - name: "Create dir assets"
+      file:
+        path: ~/assets
+        state: directory
 
   tasks:
-  - name: Download aws-cli.zip
-    get_url:
-      url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
-      dest: ./assets/awscliv2.zip
-      mode: 0755 
+    - name: Download aws-cli.zip
+      get_url:
+        url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+        dest: ./assets/awscliv2.zip
+        mode: 0755 
  
   tasks:
-  - name: unzip aws-cli.zip
-    unarchive:
-      src: ./assets/awscliv2.zip
-      dest: ./assets/
+    - name: unzip aws-cli.zip
+      unarchive:
+        src: ./assets/awscliv2.zip
+        dest: ./assets/
       
   tasks:
-  - name: Install aws-cli
-    shell: ./assets/aws/install
+    - name: Install aws-cli
+      shell: ./assets/aws/install
   
 
       
