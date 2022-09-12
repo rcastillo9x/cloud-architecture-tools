@@ -3,4 +3,5 @@ service   = "cpm01"
 contact   = "cpm@balanz.com
 compliance = "PII"
 enviroment = "desa"
+aws_region = "east-1"
 

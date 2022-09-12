@@ -78,7 +78,7 @@ variable "contact" {
 }
 
 variable "compliance" {
-  type        = String
+  type        = string
   description = "Type of compliance: Normal | PII"
   default     = "us-east-1"
 }

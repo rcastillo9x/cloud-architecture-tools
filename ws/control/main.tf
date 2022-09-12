@@ -27,6 +27,14 @@ data "aws_ssm_parameter" "ami" {
 # RESOURCES
 ##################################################################################
 
+# TODO: VPC
+# TODO: IG
+# TODO: RT
+# TODO: ACL
+# TODO: SEG
+# TODO: INSTANCE
+
+
 # NETWORKING #
 resource "aws_vpc" "vpc" {
   cidr_block           = var.vpc_cidr_block
