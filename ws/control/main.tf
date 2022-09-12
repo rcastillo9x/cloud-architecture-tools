@@ -9,11 +9,6 @@
 # OOMPUTE
 ##################################################################################
 
-variable "control_vpc" {
-  type        = string
-  description = "control vpc"
-  default     = join("-",[local.prefix.bu,local.prefix.env,local.prefix.vpc])
-}
 
 ##################################################################################
 # PROVIDERS
