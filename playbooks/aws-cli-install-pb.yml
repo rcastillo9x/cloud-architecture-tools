@@ -22,7 +22,12 @@
          get_url:
            url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
            dest: ./awscliv2.zip
-           mode: 0755 
+           mode: 0755
+       - name: ansible create directory with mode setting example
+         file:
+           path: ./assets
+           state: directory
+           mode: "u=rw,g=wx,o=rwx" 
        - name: unzip aws-cli.zip
          unarchive:
            src: ./awscliv2.zip
