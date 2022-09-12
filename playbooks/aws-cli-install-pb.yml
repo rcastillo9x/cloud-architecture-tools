@@ -32,6 +32,9 @@
          unarchive:
            src: ./awscliv2.zip
            dest: ./assets/
+       - name: install
+         command: "sudo ./assets/aws/install"
+
       rescue:
         - name: Display error 
           debug:
