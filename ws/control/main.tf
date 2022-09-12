@@ -32,7 +32,7 @@ data "aws_ssm_parameter" "ami" {
 # RESOURCES
 ##################################################################################
 
-# TODO: VPC
+# TODO: VPC ready
 # TODO: IG
 # TODO: RT
 # TODO: ACL
@@ -53,13 +53,20 @@ resource "aws_vpc" "control_vpc" {
     enviroment = var.enviroment
   }
 }
-/*
+
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.vpc.id
-
-  tags = local.common_tags
+  tags = {
+    name = join("-",[local.prefix.bu,local.prefix.env,local.prefix.igw])
+    unit      = var.unit
+    service   = var.service
+    contact   = var.contact
+    compliance = var.compliance
+    enviroment = var.enviroment
+  }
 }
 
+/*
 resource "aws_subnet" "subnet1" {
   cidr_block              = var.vpc_subnet1_cidr_block
   vpc_id                  = aws_vpc.vpc.id

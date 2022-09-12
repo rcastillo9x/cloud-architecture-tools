@@ -3,5 +3,5 @@ service="cpm01"
 contact="cpm@balanz.com"
 compliance="PII"
 enviromen ="desa"
-aws_region="east-1"
+aws_region="us-east-1"
 

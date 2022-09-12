@@ -7,7 +7,7 @@ locals {
     enviroment = var.enviroment
   }
   prefix = {
-    ig = "ig"
+    igw = "igw"
     vpc="vpc"
     bu=var.service
     env = var.enviroment
