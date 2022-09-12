@@ -90,5 +90,5 @@ variable "compliance" {
 variable "control_vpc" {
   type        = string
   description = "control vpc"
-  default     = local.prefix.bu + "-" + local.prefix.env +"-"+ local.prefix.vpc
+  default     = join("-",[local.prefix.bu,local.prefix.env,local.prefix.vpc])
 }
