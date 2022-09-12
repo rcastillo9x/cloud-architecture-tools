@@ -1,7 +1,7 @@
-unit      = "cpm"
-service   = "cpm01"
-contact   = "cpm@balanz.com"
-compliance = "PII"
-enviroment = "desa"
-aws_region = "east-1"
+unit="cpm"
+service="cpm01"
+contact="cpm@balanz.com"
+compliance="PII"
+enviromen ="desa"
+aws_region="east-1"
 
