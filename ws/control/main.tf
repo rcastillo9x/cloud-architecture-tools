@@ -42,10 +42,12 @@ data "aws_ssm_parameter" "ami" {
 
 # NETWORKING #
 resource "aws_vpc" "control_vpc" {
-  name = "test"
   cidr_block           = var.vpc_cidr_block
   enable_dns_hostnames = var.enable_dns_hostnames
   tags = local.common_tags
+  tags {
+    name = join("-",[local.prefix.bu,local.prefix.env,local.prefix.vpc])
+  }
 }
 /*
 resource "aws_internet_gateway" "igw" {
