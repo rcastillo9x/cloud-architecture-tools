@@ -55,7 +55,7 @@ resource "aws_vpc" "control_vpc" {
 }
 
 resource "aws_internet_gateway" "igw" {
-  vpc_id = aws_vpc.vpc.id
+  vpc_id = aws_vpc.control_vpc.id
   tags = {
     name = join("-",[local.prefix.bu,local.prefix.env,local.prefix.igw])
     unit      = var.unit
