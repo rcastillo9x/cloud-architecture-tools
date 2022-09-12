@@ -82,3 +82,13 @@ variable "compliance" {
   description = "Type of compliance: Normal | PII"
   default     = "us-east-1"
 }
+
+##################################################################################
+# OOMPUTE
+##################################################################################
+
+variable "control_vpc" {
+  type        = string
+  description = "control vpc"
+  default     = local.prefix.bu + "-" + local.prefix.env +"-"+ local.prefix.vpc
+}
