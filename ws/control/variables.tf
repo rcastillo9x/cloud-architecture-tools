@@ -39,10 +39,16 @@ variable "vpc_cidr_block" {
   default     = "10.0.0.0/16"
 }
 
-variable "vpc_subnet1_cidr_block" {
+variable "vpc_pub_subnet_cidr_block" {
   type        = string
-  description = "CIDR Block for Subnet 1 in VPC"
+  description = "CIDR Block for public subnet in VPC"
   default     = "10.0.0.0/24"
+}
+
+variable "vpc_prv_subnet_cidr_block" {
+  type        = string
+  description = "CIDR Block for private subnet in VPC"
+  default     = "10.0.1.0/24"
 }
 
 variable "map_public_ip_on_launch" {

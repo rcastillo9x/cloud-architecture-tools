@@ -40,6 +40,7 @@ data "aws_ssm_parameter" "ami" {
 
 
 # NETWORKING #
+### VPC
 resource "aws_vpc" "control_vpc" {
   cidr_block           = var.vpc_cidr_block
   enable_dns_hostnames = var.enable_dns_hostnames
@@ -53,6 +54,7 @@ resource "aws_vpc" "control_vpc" {
   }
 }
 
+### INTERNET GATEWAY
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.control_vpc.id
   tags = {
@@ -65,15 +67,44 @@ resource "aws_internet_gateway" "igw" {
   }
 }
 
-/*
-resource "aws_subnet" "subnet1" {
-  cidr_block              = var.vpc_subnet1_cidr_block
+### PUBLIC SUBNET
+resource "aws_subnet" "pub_subnet" {
+  cidr_block              = var.vpc_pub_subnet_cidr_block
   vpc_id                  = aws_vpc.vpc.id
   map_public_ip_on_launch = var.map_public_ip_on_launch
 
-  tags = local.common_tags
+   tags = {
+    name = join("-",["public",local.prefix.bu,local.prefix.env,local.prefix.subnet])
+    unit      = var.unit
+    service   = var.service
+    contact   = var.contact
+    compliance = var.compliance
+    enviroment = var.enviroment
+  }
 }
 
+### PRIVATE SUBNET
+
+resource "aws_subnet" "prv_subnet" {
+  cidr_block              = var.vpc_prv_subnet_cidr_block
+  vpc_id                  = aws_vpc.vpc.id
+  map_public_ip_on_launch = var.map_public_ip_on_launch
+
+   tags = {
+    name = join("-",["private",local.prefix.bu,local.prefix.env,local.prefix.subnet])
+    unit      = var.unit
+    service   = var.service
+    contact   = var.contact
+    compliance = var.compliance
+    enviroment = var.enviroment
+  }
+}
+
+
+### PRIVATE SUBNET
+
+
+/*
 # ROUTING #
 resource "aws_route_table" "rtb" {
   vpc_id = aws_vpc.vpc.id
