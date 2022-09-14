@@ -58,6 +58,7 @@ resource "aws_vpc" "control_vpc" {
 ### INTERNET GATEWAY
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.control_vpc.id
+  name = join("-",[local.prefix.bu,local.prefix.env,local.prefix.igw])
   tags = {
     name = join("-",[local.prefix.bu,local.prefix.env,local.prefix.igw])
     unit      = var.unit
@@ -73,6 +74,7 @@ resource "aws_subnet" "pub_subnet" {
   cidr_block              = var.vpc_pub_subnet_cidr_block
   vpc_id                  = aws_vpc.control_vpc.id
   map_public_ip_on_launch = var.map_public_ip_on_launch
+   name = join("-",[local.prefix.bu,local.prefix.env,local.prefix.igw])
 
    tags = {
     name = join("-",[local.prefix.pub,local.prefix.bu,local.prefix.env,local.prefix.subnet])
@@ -90,6 +92,7 @@ resource "aws_subnet" "prv_subnet" {
   cidr_block              = var.vpc_prv_subnet_cidr_block
   vpc_id                  = aws_vpc.control_vpc.id
   map_public_ip_on_launch = var.map_public_ip_on_launch
+   name = join("-",[local.prefix.bu,local.prefix.env,local.prefix.igw])
 
    tags = {
     name = join("-",[local.prefix.prv,local.prefix.bu,local.prefix.env,local.prefix.subnet])

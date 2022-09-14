@@ -4,5 +4,4 @@ contact="micorreo@dominio.com"
 compliance="PII"
 enviromen ="desa"
 aws_region="us-east-1"
-user_aws_deploy="ubuntu"
 
