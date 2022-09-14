@@ -7,7 +7,7 @@
 ### AZ: us-east-1a  CIDR 2: 10.0.1.0/24
 
 resource "aws_subnet" "pubsubnet1" {
-  cidr_block              = "10.0.1.0/246"
+  cidr_block              = "10.0.1.0/24"
   vpc_id                  = aws_vpc.cpmvpc.id
   availability_zone       = "us-east-1a"
   # Required for EKS
