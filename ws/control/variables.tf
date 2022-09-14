@@ -76,9 +76,3 @@ variable "compliance" {
   description = "Type of compliance: Normal | PII"
   default     = "us-east-1"
 }
-
-variable "user_aws_deploy" {
-  type        = string
-  description = "home directory of user that contains .aws folder with the credentials"
-  default     = "ubuntu"
-}
