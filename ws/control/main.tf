@@ -15,7 +15,7 @@
 ##################################################################################
 
 provider "aws" {
-  shared_credentials_file = "~/${var.user_aws_deploy}.aws/credentials"
+  shared_credentials_file = "~/${var.user_aws_deploy}/.aws/credentials"
   region     = var.aws_region
 }
 
