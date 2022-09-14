@@ -32,7 +32,8 @@ data "aws_ssm_parameter" "ami" {
 ##################################################################################
 
 # TODO: VPC ready
-# TODO: IG
+# TODO: IG ready
+# TODO: SUBNET
 # TODO: RT
 # TODO: ACL
 # TODO: SEG
@@ -70,7 +71,7 @@ resource "aws_internet_gateway" "igw" {
 ### PUBLIC SUBNET
 resource "aws_subnet" "pub_subnet" {
   cidr_block              = var.vpc_pub_subnet_cidr_block
-  vpc_id                  = aws_vpc.vpc.id
+  vpc_id                  = aws_vpc.control_vpc.id
   map_public_ip_on_launch = var.map_public_ip_on_launch
 
    tags = {
@@ -87,7 +88,7 @@ resource "aws_subnet" "pub_subnet" {
 
 resource "aws_subnet" "prv_subnet" {
   cidr_block              = var.vpc_prv_subnet_cidr_block
-  vpc_id                  = aws_vpc.vpc.id
+  vpc_id                  = aws_vpc.control_vpc.id
   map_public_ip_on_launch = var.map_public_ip_on_launch
 
    tags = {
