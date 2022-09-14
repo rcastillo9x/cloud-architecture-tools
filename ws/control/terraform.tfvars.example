@@ -1,7 +1,8 @@
 unit="cpm"
 service="cpm01"
-contact="cpm@balanz.com"
+contact="micorreo@dominio.com"
 compliance="PII"
 enviromen ="desa"
 aws_region="us-east-1"
+user_aws_deploy="ubuntu"
 
