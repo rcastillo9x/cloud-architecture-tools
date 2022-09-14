@@ -27,23 +27,6 @@ variable "vpc_cidr_block" {
   default     = "10.0.0.0/16"
 }
 
-variable "vpc_pub_subnet_cidr_block" {
-  type        = string
-  description = "CIDR Block for public subnet in VPC"
-  default     = "10.0.0.0/24"
-}
-
-variable "vpc_prv_subnet_cidr_block" {
-  type        = string
-  description = "CIDR Block for private subnet in VPC"
-  default     = "10.0.1.0/24"
-}
-
-variable "map_public_ip_on_launch" {
-  type        = bool
-  description = "Map a public IP address for Subnet instances"
-  default     = true
-}
 
 variable "instance_type" {
   type        = string

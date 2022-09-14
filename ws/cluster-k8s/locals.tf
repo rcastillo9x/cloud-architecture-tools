@@ -12,7 +12,9 @@ locals {
     bu     = var.service
     env    = var.enviroment
     subnet = "snt"
-    pub    = "public"
-    prv    = "private"
+    pub1    = "public1"
+    prv1    = "private1"
+    pub2    = "public1"
+    prv2    = "private1"
   }
 }
