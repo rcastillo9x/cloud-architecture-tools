@@ -11,5 +11,8 @@ locals {
     vpc="vpc"
     bu=var.service
     env = var.enviroment
+    subnet ="snt"
+    pub = "public"
+    prv ="private"
     }
 }

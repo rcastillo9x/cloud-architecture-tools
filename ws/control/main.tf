@@ -75,7 +75,7 @@ resource "aws_subnet" "pub_subnet" {
   map_public_ip_on_launch = var.map_public_ip_on_launch
 
    tags = {
-    name = join("-",["public",local.prefix.bu,local.prefix.env,local.prefix.subnet])
+    name = join("-",[local.prefix.pub,local.prefix.bu,local.prefix.env,local.prefix.subnet])
     unit      = var.unit
     service   = var.service
     contact   = var.contact
@@ -92,7 +92,7 @@ resource "aws_subnet" "prv_subnet" {
   map_public_ip_on_launch = var.map_public_ip_on_launch
 
    tags = {
-    name = join("-",["private",local.prefix.bu,local.prefix.env,local.prefix.subnet])
+    name = join("-",[local.prefix.prv,local.prefix.bu,local.prefix.env,local.prefix.subnet])
     unit      = var.unit
     service   = var.service
     contact   = var.contact
