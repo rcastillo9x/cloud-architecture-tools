@@ -11,7 +11,7 @@ resource "aws_nat_gateway" "ngw1" {
     subnet_id = aws_subnet.pubsubnet1.id
 
     tags = {
-    Name       = join("-", [local.prefix.nat1,local.prefix.bu, local.prefix.env, local.prefix.eips])
+    Name       = join("-", [local.prefix.nat1,local.prefix.bu, local.prefix.env, local.prefix.natgw])
     unit       = var.unit
     service    = var.service
     contact    = var.contact
@@ -28,7 +28,7 @@ resource "aws_nat_gateway" "ngw2" {
     subnet_id = aws_subnet.pubsubnet2.id
 
     tags = {
-    Name       = join("-", [local.prefix.nat2,local.prefix.bu, local.prefix.env, local.prefix.eips])
+    Name       = join("-", [local.prefix.nat2,local.prefix.bu, local.prefix.env, local.prefix.natgw])
     unit       = var.unit
     service    = var.service
     contact    = var.contact
