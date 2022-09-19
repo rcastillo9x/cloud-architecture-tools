@@ -28,7 +28,7 @@ resource "aws_route_table_association" "prv1_rta" {
     subnet_id = aws_subnet.prvsubnet1.id
 
     # The id of the routine table to associathe with
-    route_table_id = aws_route_table.prvrt1
+    route_table_id = aws_route_table.prvrt1.id
 }
 
 resource "aws_route_table_association" "prv2_rta" {
@@ -36,5 +36,5 @@ resource "aws_route_table_association" "prv2_rta" {
     subnet_id = aws_subnet.prvsubnet2.id
 
     # The id of the routine table to associathe with
-    route_table_id = aws_route_table.prvrt2
+    route_table_id = aws_route_table.prvrt2.id
 }
