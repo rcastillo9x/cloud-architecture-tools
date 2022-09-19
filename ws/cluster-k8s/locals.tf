@@ -17,7 +17,7 @@ locals {
     pub2    = "public1"
     prv2    = "private1"
     eips    = "eips"
-    nat     = "natgw"
+    natgw     = "natgw"
     nat1    = "natgw1"
     nat2    = "natgw2"
     rt     = "rt"
