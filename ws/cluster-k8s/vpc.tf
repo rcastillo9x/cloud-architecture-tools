@@ -19,7 +19,7 @@ resource "aws_vpc" "cpmvpc" {
   assign_generated_ipv6_cidr_block = false
 
   tags = {
-    name       = join("-", [local.prefix.bu, local.prefix.env, local.prefix.vpc])
+    Name       = join("-", [local.prefix.bu, local.prefix.env, local.prefix.vpc])
     unit       = var.unit
     service    = var.service
     contact    = var.contact
