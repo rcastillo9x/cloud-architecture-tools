@@ -3,7 +3,7 @@
 ##################################################################################
 
 ### INTERNET GATEWAY
-resource "aws_internet_gateway" "cpmvpc" {
+resource "aws_internet_gateway" "cpmig" {
   vpc_id = aws_vpc.cpmvpc.id
   tags = {
     Name = join("-",[local.prefix.bu,local.prefix.env,local.prefix.igw])
