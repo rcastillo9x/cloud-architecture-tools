@@ -5,10 +5,7 @@
 ### ROUTING TABLES
 
 resource "aws_route_table" "pubrt" {
-  depends_on = [
-    aws_vpc.cpmvpc,
-    aws_internet_gateway
-  ]
+   
 
   # The VPC id
   vpc_id = aws_vpc.cpmvpc.id
@@ -33,10 +30,7 @@ resource "aws_route_table" "pubrt" {
 }
 
 resource "aws_route_table" "prvrt1" {
-  depends_on = [
-    aws_vpc.cpmvpc,
-    aws_internet_gateway
-  ]
+  
 
   # The VPC id
   vpc_id = aws_vpc.cpmvpc.id
@@ -60,10 +54,7 @@ resource "aws_route_table" "prvrt1" {
 }
 
 resource "aws_route_table" "prvrt2" {
-  depends_on = [
-    aws_vpc.cpmvpc,
-    aws_internet_gateway
-  ]
+  
 
   # The VPC id
   vpc_id = aws_vpc.cpmvpc.id
