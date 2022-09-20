@@ -23,4 +23,9 @@ locals {
     rt     = "rt"
     rt1     = "rt1"
   }
+
+  cluster = {
+    name    = "${var.enviroment}-${var.service}-eks-cluster"
+    version = "1.18"
+   
 }
