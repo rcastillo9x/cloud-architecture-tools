@@ -24,7 +24,7 @@
             name:
             - kubectl
             classic: true
-            state: latest
+            state: ´present
       rescue:
         - name: Display error 
           debug:
