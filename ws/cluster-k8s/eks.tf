@@ -72,6 +72,15 @@ resource "aws_eks_cluster" "eks" {
       aws_subnet.prvsubnet1.id,
       aws_subnet.prvsubnet2.id
     ]
+
+    tags = {
+      Name       = local.cluster.name
+      unit       = var.unit
+      service    = var.service
+      contact    = var.contact
+      compliance = var.compliance
+      enviroment = var.enviroment
+    }
   }
 
   # Ensure that IAM Role permissions are created before and deleted after EKS Cluster handling.
