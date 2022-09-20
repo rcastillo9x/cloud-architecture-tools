@@ -1,12 +1,12 @@
 --- 
-# Install aws cli
+# Install tools k8s
 - hosts: localhost 
   become: true
   tasks:
     - block:
        - name: Display log 
          debug:
-           msg: "*** Start install aws-cli ***"
+           msg: "*** Start install k8s tools ***"
        - name: "Update Repository cache"
          apt:
             update_cache: true
@@ -25,23 +25,6 @@
             - kubectl
             classic: true
             state: latest
-       - name: Download aws-cli.zip
-         get_url:
-           url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
-           dest: ./awscliv2.zip
-           mode: 0755
-       - name: ansible create directory with mode setting example
-         file:
-           path: ./assets
-           state: directory
-           mode: "u=rw,g=wx,o=rwx" 
-       - name: unzip aws-cli.zip
-         unarchive:
-           src: ./awscliv2.zip
-           dest: ./assets/
-       - name: install
-         command: "sudo ./assets/aws/install"
-
       rescue:
         - name: Display error 
           debug:
