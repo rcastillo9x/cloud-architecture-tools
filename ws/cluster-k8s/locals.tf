@@ -1,4 +1,11 @@
 locals {
+
+   azones = {
+    az    = "us-east-2"
+    az_a    = "us-east-2a"
+    az_b    = "us-east-2a"
+    }
+    
   # TAGS CONFIGURATION
   common_tags = {
     unit       = var.unit
@@ -15,16 +22,16 @@ locals {
     bu     = var.service
     env    = var.enviroment
     subnet = "snt"
-    pub1    = "public1"
-    prv1    = "private1"
-    pub2    = "public1"
-    prv2    = "private1"
+    pub1    = "public01"
+    prv1    = "private01"
+    pub2    = "public01"
+    prv2    = "private01"
     eips    = "eips"
     natgw     = "natgw"
-    nat1    = "natgw1"
-    nat2    = "natgw2"
+    nat1    = "natgw01"
+    nat2    = "natgw02"
     rt     = "rt"
-    rt1     = "rt1"
+    rt1     = "rt01"
   }
 
  # CLUSTER K8S CONFIGURATION

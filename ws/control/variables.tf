@@ -5,13 +5,13 @@
 variable "aws_region" {
   type        = string
   description = "Region for AWS Resources"
-  default     = "us-east-1"
+  default     = "us-east-2"
 }
 
 variable "enviroment" {
   type        = string
   description = "enviroment for AWS Resources"
-  default     = "us-east-1"
+  default     = "desa"
 }
 
 
@@ -73,6 +73,6 @@ variable "contact" {
 
 variable "compliance" {
   type        = string
-  description = "Type of compliance: Normal | PII"
-  default     = "us-east-1"
+  description = "Type of Personally Identifiable Information : Normal | PII"
+  default     = "PII"
 }

@@ -36,3 +36,4 @@ output "vpc_id" {
   sensitive   = false
 
 }
+
