@@ -12,14 +12,14 @@
             update_cache: true
             cache_valid_time: 3600
             force_apt_get: true
-       - name: Install curl
+       - name: Install snap
          apt:
             name:
             - curl
             - unzip
             - snap
             state: latest
-       - name: Install curl
+       - name: Install kubectl
          snap:
             name:
             - kubectl

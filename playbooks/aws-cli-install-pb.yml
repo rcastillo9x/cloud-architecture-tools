@@ -17,13 +17,6 @@
             name:
             - curl
             - unzip
-            - snap
-            state: latest
-       - name: Install curl
-         snap:
-            name:
-            - kubectl
-            classic: true
             state: latest
        - name: Download aws-cli.zip
          get_url:
