@@ -15,8 +15,6 @@
        - name: Install snap
          apt:
             name:
-            - curl
-            - unzip
             - snap
             state: latest
        - name: Install kubectl
