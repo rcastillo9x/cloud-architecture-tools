@@ -23,7 +23,7 @@ resource "aws_subnet" "pubsubnet1" {
     "enviroment" = var.enviroment
     # Required for EKS
     "kubernetes.io/role/elb"     = "1"
-    "kubernetes.io/cluster/eks" = "shared"
+    "kubernetes.io/cluster/${local.cluster.name}" = "shared"
   }
 }
 
@@ -68,7 +68,7 @@ resource "aws_subnet" "pubsubnet2" {
     "compliance" = var.compliance
     "enviroment" = var.enviroment
      # Required for EKS
-    "kubernetes.io/cluster/eks" = "shared"
+    "kubernetes.io/cluster/${local.cluster.name}" = "shared"
     "kubernetes.io/role/elb"     = "1"
 
   }
@@ -90,7 +90,7 @@ resource "aws_subnet" "prvsubnet2" {
     "compliance" = var.compliance
     "enviroment" = var.enviroment
     # Reqyired for K8s
-    "kubernetes.io/cluster/eks"      = "shared"
+    "kubernetes.io/cluster/${local.cluster.name}"      = "shared"
     "kubernetes.io/role/internal-elb" = "1"
   }
 }
