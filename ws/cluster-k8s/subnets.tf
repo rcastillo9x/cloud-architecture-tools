@@ -43,7 +43,7 @@ resource "aws_subnet" "prvsubnet1" {
     "compliance" = var.compliance
     "enviroment" = var.enviroment
     # Reqyired for K8s
-    "kubernetes.io/cluster/eks"      = "shared"
+    "kubernetes.io/cluster/${local.cluster.name}"      = "shared"
     "kubernetes.io/role/internal-elb" = "1"
 
   }

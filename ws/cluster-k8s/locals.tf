@@ -31,6 +31,7 @@ locals {
   cluster = {
     name    = "${var.enviroment}-${var.service}-eks-cluster"
     version = "1.23"
+    node_group_name = "{var.service}-nodes-general"
     }
    
 }
