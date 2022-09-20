@@ -49,7 +49,7 @@ resource "aws_iam_role_policy_attachment" "amazon_eks_cluster_policy" {
 
 resource "aws_eks_cluster" "eks" {
   # Name of the cluster.
-  name = "eks"
+  name = local.cluster.name
 
   # The Amazon Resource Name (ARN) of the IAM role that provides permissions for 
   # the Kubernetes control plane to make calls to AWS API operations on your behalf
@@ -72,8 +72,10 @@ resource "aws_eks_cluster" "eks" {
       aws_subnet.prvsubnet1.id,
       aws_subnet.prvsubnet2.id
     ]
+    
+  }
 
-    tags = {
+  tags = {
       Name       = local.cluster.name
       unit       = var.unit
       service    = var.service
@@ -81,7 +83,6 @@ resource "aws_eks_cluster" "eks" {
       compliance = var.compliance
       enviroment = var.enviroment
     }
-  }
 
   # Ensure that IAM Role permissions are created before and deleted after EKS Cluster handling.
   # Otherwise, EKS will not be able to properly delete EKS managed EC2 infrastructure such as Security Groups.
