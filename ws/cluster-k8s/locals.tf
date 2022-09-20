@@ -1,4 +1,5 @@
 locals {
+  # TAGS CONFIGURATION
   common_tags = {
     unit       = var.unit
     service    = var.service
@@ -6,6 +7,8 @@ locals {
     compliance = var.compliance
     enviroment = var.enviroment
   }
+
+  # GLOBAL VAR CONFIGURATION
   prefix = {
     igw    = "igw"
     vpc    = "vpc"
@@ -24,8 +27,10 @@ locals {
     rt1     = "rt1"
   }
 
+ # CLUSTER K8S CONFIGURATION
   cluster = {
     name    = "${var.enviroment}-${var.service}-eks-cluster"
     version = "1.18"
+    }
    
 }
