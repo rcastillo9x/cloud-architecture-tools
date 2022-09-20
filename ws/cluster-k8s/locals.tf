@@ -30,7 +30,7 @@ locals {
  # CLUSTER K8S CONFIGURATION
   cluster = {
     name    = "${var.enviroment}-${var.service}-eks-cluster"
-    version = "1.18"
+    version = "1.22"
     }
    
 }
